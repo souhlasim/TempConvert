@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Temperature convertor</title>
+	</head>
+	<body>
+		<p><b>Input the temperature in the lines below and see it convert!</b></p>
+
+		<p>
+		  <label>Fahrenheit</label>
+		  <input id="inputFahrenheit" type="number" placeholder="Input Fahrenheit" oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this.value)">
+		Celcius: <b><span id="outputCelcius"></span></b>	Kelvin: <b><span id="outputKelvin"></span></b>
+		</p>
+		<script type="text/javascript">
+			function temperatureConverter(valNum) {
+			  valNum = parseFloat(valNum);
+			  document.getElementById("outputCelcius").innerHTML=Math.floor((valNum-32)/1.8);
+			  document.getElementById("outputKelvin").innerHTML=Math.floor((valNum+459.67)*5/9);
+			}
+		</script>
+
+
+		<p>
+		  <label>Celsius</label>
+		  <input id="inputCelsius" type="number" placeholder="Input Celsius" oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this.value)">
+		  	Fahrenheit: <b><span id="outputFahrenheit"></span></b>   Kelvin: <b><span id="outputKelvin1"></span></b>
+		</p>
+
+		<script type="text/javascript">
+			function temperatureConverter(valNum) {
+			  valNum = parseFloat(valNum);
+			  document.getElementById("outputFahrenheit").innerHTML=Math.floor((valNum*9/5)+32);
+			  document.getElementById("outputKelvin1").innerHTML=Math.floor(valNum+273.15);
+			}
+		</script>
+
+		<p>
+		  <label>Kelvin</label>
+		  <input id="inputKelvin" type="number" placeholder="Input Kelvin" oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this.value)">
+			Celcius: <b><span id="outputCelcius1"></span></b>   Fahrenheit: <b><span id="outputFahrenheit1"></span></b>
+
+			<script type="text/javascript">
+			function temperatureConverter(valNum) {
+			  valNum = parseFloat(valNum);
+			  document.getElementById("outputCelcius1").innerHTML=Math.floor(valNum-273.15);
+			  document.getElementById("outputFahrenheit1").innerHTML=Math.floor(((valNum-273.15)*9/5)+32);
+			}
+		</script>
+
+	</body>
+</head>
+</html>
